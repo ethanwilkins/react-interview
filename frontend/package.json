@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
+    "classnames": "^2.2.6",
     "mapbox-gl": "^1.12.0",
+    "node-sass": "^4.14.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.4.3"

@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 import Locations from './components/Locations';
 import EarthQuakes from './components/EarthQuakes';

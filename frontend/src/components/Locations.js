@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+import styles from '../styles/Locations.module.scss';
+import MapboxGLMap from './MapboxGLMap';
+
 export default function Locations(props) {
 
   const [locations, setLocations ] = useState(null);
@@ -23,7 +26,8 @@ export default function Locations(props) {
   
   return (
     <>
-      {locations ? locations.map((item,i) => <li key={i}>{JSON.stringify(item)}</li>) : 'Loading...'}
+      {locations ? locations.map((item,i) => <li className={styles.item} key={i}>{JSON.stringify(item)}</li>) : 'Loading...'}
+      <MapboxGLMap />
     </>
   );
 };
