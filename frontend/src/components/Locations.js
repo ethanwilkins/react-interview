@@ -6,10 +6,10 @@ export default function Locations(props) {
   const [locations, setLocations ] = useState(null);
   
   useEffect(() => {
-    fetchingData();
+    fetchData();
   }, []);
   
-  const fetchingData = () => {
+  const fetchData = () => {
     axios
       .get("http://127.0.0.1:12059/react-interview/getLowesStores")
       .then(response => {
@@ -23,7 +23,7 @@ export default function Locations(props) {
   
   return (
     <>
-      <span>{locations ? JSON.stringify(locations) : "No locations were fetched..."}</span>
+      {locations ? locations.map((item,i) => <li key={i}>{JSON.stringify(item)}</li>) : 'Loading...'}
     </>
   );
 };
