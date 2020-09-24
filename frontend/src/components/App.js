@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import Navbar from './components/Navbar';
-import Locations from './components/Locations';
-import EarthQuakes from './components/EarthQuakes';
-import Loans from './components/Loans';
+import Navbar from './Navbar';
+import Locations from './Locations';
+import EarthQuakes from './EarthQuakes';
+import Loans from './Loans';
 
 const style = {
   width: '70vw',
