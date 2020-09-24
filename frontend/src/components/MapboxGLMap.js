@@ -34,7 +34,7 @@ const MapboxGLMap = ({ locations }) => {
 };
 
 MapboxGLMap.propTypes = {
-  page: PropTypes.object.isRequired
+  page: PropTypes.array.isRequired
 };
 
 export default MapboxGLMap;
