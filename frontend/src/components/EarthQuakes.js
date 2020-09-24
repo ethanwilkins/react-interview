@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+import { CsvToHtmlTable } from 'react-csv-to-table';
+
 import styles from '../styles/EarthQuakes.module.scss';
 
 export default function EarthQuakes(props) {
@@ -25,7 +27,15 @@ export default function EarthQuakes(props) {
   
   return (
     <>
-      {earthQuakes ? JSON.stringify(earthQuakes) : 'Loading...'}
+      {!earthQuakes &&
+        "Loading..."
+      }
+      {earthQuakes &&
+        <CsvToHtmlTable
+          data={earthQuakes}
+          csvDelimiter=","
+        />
+      }
     </>
   );
 };

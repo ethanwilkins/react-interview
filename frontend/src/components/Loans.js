@@ -5,7 +5,7 @@ export default function Loans(props) {
 
   return (
     <div>
-      
+      Loans
     </div>
   )
 };

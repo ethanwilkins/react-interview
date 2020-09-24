@@ -29,8 +29,6 @@ export default function Locations(props) {
       {locations &&
         <MapboxGLMap locations={locations} />
       }
-      
-      {locations ? locations.map((item,i) => <li className={styles.item} key={i}>{JSON.stringify(item)}</li>) : 'Loading...'}
     </>
   );
 };
