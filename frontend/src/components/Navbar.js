@@ -7,6 +7,7 @@ const style = {
   marginBottom: '2vh'
 }
 
+// page and setPage are passed in as props to enable navigation
 export default function Navbar({ page, setPage }) {
 
   return (

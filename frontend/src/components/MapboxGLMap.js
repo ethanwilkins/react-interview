@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
-  accessToken:
-    process.env.REACT_APP_MAPBOX_KEY
+  // Ensure that you've set an environment variable for your access token in order to use mapbox
+  accessToken: process.env.REACT_APP_MAPBOX_KEY
 });
 
 const MapboxGLMap = ({ locations }) => {

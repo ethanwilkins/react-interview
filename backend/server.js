@@ -4,6 +4,7 @@ const fs = require('fs');
 const locations = require("../data/stores.json");
 const cors = require('cors');
 
+// Enable cross-origin resource sharing
 app.use(cors());
 
 function getLocations(req) {
