@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
+import { CsvToHtmlTable } from 'react-csv-to-table';
+
+import styles from '../styles/Loans.module.scss';
 
 export default function Loans(props) {
 
+  const [loans, setLoans ] = useState(null);
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+  const fetchData = () => {
+    axios
+      .get("http://localhost:12059/react-interview/getLoanData")
+      .then(response => {
+
+         console.log('response',response.data)
+
+         setLoans(response.data)
+       }) // you have array in your response.data so add your data here
+      .catch(err => alert(err));
+  };
+  
   return (
-    <div>
-      Loans
-    </div>
-  )
+    <>
+      {!loans &&
+        "Loading..."
+      }
+      {loans &&
+        <CsvToHtmlTable
+          data={loans}
+          csvDelimiter=","
+          tableClassName="table table-striped table-hover"
+        />
+      }
+    </>
+  );
 };

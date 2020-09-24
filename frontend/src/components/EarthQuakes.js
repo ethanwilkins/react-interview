@@ -34,6 +34,7 @@ export default function EarthQuakes(props) {
         <CsvToHtmlTable
           data={earthQuakes}
           csvDelimiter=","
+          tableClassName="table table-striped table-hover"
         />
       }
     </>

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Button, ButtonGroup } from 'react-bootstrap';
+
 import styles from '../styles/Navbar.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
@@ -9,32 +11,26 @@ export default function Navbar({ page, setPage }) {
 
   return (
     <>
-      <div
-        onClick={() => setPage('Locations')}
-        className={cx(styles.button, {
-          active: page === 'Locations'
-        })}
-      >
-        Locations
-      </div>
-
-      <div
-        onClick={() => setPage('EarthQuakes')}
-        className={cx(styles.button, {
-          active: page === 'EarthQuakes'
-        })}
-      >
-        EarthQuakes
-      </div>
-
-      <div
-        onClick={() => setPage('Loans')}
-        className={cx(styles.button, {
-          active: page === 'Loans'
-        })}
-      >
-        Loans
-      </div>
+      <ButtonGroup>
+        <Button
+          onClick={() => setPage('Locations')}
+          variant={page === 'Locations' ? 'primary' : 'secondary'}
+        >
+          Lowe's Stores
+        </Button>
+        <Button
+          onClick={() => setPage('EarthQuakes')}
+          variant={page === 'EarthQuakes' ? 'primary' : 'secondary'}
+        >
+          Earth Quakes
+        </Button>
+        <Button
+          onClick={() => setPage('Loans')}
+          variant={page === 'Loans' ? 'primary' : 'secondary'}
+        >
+          Loans
+        </Button>
+      </ButtonGroup>
     </>
   )
 };
