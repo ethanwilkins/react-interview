@@ -30,13 +30,13 @@ export default function EarthQuakes(props) {
   return (
     <>
       {!earthQuakes &&
-        <Spinner animation="border" variant="success" />
+        <Spinner animation="border" variant="success" size="sm" />
       }
       {earthQuakes &&
         <CsvToHtmlTable
           data={earthQuakes}
           csvDelimiter=","
-          tableClassName="table table-striped table-hover"
+          tableClassName="table table-striped table-hover table-sm"
         />
       }
     </>

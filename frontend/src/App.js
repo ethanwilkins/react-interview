@@ -5,24 +5,26 @@ import Locations from './components/Locations';
 import EarthQuakes from './components/EarthQuakes';
 import Loans from './components/Loans';
 
+import styles from './styles/App.module.scss';
+
 function App() {
   const [page, setPage] = useState('Locations')
   return (
-    <>
+    <div className={styles.app}>
       <Navbar page={page} setPage={setPage} />
 
       {page === 'Locations' &&
-        <Locations page={page} />
+        <Locations />
       }
       
       {page === 'EarthQuakes' &&
-        <EarthQuakes page={page} />
+        <EarthQuakes />
       }
       
       {page === 'Loans' &&
-        <Loans page={page} />
+        <Loans />
       }
-    </>
+    </div>
   );
 }
 

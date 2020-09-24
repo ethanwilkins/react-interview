@@ -30,13 +30,13 @@ export default function Loans(props) {
   return (
     <>
       {!loans &&
-        <Spinner animation="border" variant="success" />
+        <Spinner animation="border" variant="success" size="sm" />
       }
       {loans &&
         <CsvToHtmlTable
           data={loans}
           csvDelimiter=","
-          tableClassName="table table-striped table-hover"
+          tableClassName="table table-striped table-hover table-sm"
         />
       }
     </>

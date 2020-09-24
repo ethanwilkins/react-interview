@@ -14,7 +14,7 @@ const MapboxGLMap = ({ locations }) => {
       style="mapbox://styles/forrestwilkins/ckfg22k601swx19pe8dz99ujc"
       containerStyle={{
         height: '50vh',
-        width: '50vw'
+        width: '100%'
       }}
       center={[-98.5795, 39.8283]}
       zoom={[3]}
