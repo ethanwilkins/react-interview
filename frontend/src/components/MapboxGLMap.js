@@ -1,37 +1,36 @@
-import React, { useEffect, useRef, useState } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import React, { useEffect } from "react";
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
-const styles = {
-  width: "100vw",
-  height: "calc(100vh - 80px)",
-  position: "absolute"
-};
+const Map = ReactMapboxGl({
+  accessToken:
+    process.env.REACT_APP_MAPBOX_KEY
+});
 
-const MapboxGLMap = () => {
-  const [map, setMap] = useState(null);
-  const mapContainer = useRef(null);
+const MapboxGLMap = ({ locations }) => {
 
-  useEffect(() => {
-    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
-    const initializeMap = ({ setMap, mapContainer }) => {
-      const map = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-        center: [0, 0],
-        zoom: 5
-      });
-
-      map.on("load", () => {
-        setMap(map);
-        map.resize();
-      });
-    };
-
-    if (!map) initializeMap({ setMap, mapContainer });
-  }, [map]);
-
-  return <div ref={el => (mapContainer.current = el)} style={styles} />;
+  
+  return (
+    <Map
+      style="mapbox://styles/forrestwilkins/ckfg22k601swx19pe8dz99ujc"
+      containerStyle={{
+        height: '50vh',
+        width: '50vw'
+      }}
+      center={[locations[50].geometry.location.lng, locations[50].geometry.location.lat]}
+      zoom={[2]}
+    >
+      <Layer type="symbol" id="marker" layout={{ 'icon-image': 'Google_Maps_pin' }}>
+        {
+          locations.map((location, key) =>
+            <Feature
+              key={key}
+              coordinates={[location.geometry.location.lng, location.geometry.location.lat]}
+            />
+          )
+        }
+      </Layer>
+    </Map>
+  )
 };
 
 export default MapboxGLMap;
