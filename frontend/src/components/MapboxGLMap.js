@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({
@@ -7,13 +8,12 @@ const Map = ReactMapboxGl({
 });
 
 const MapboxGLMap = ({ locations }) => {
-
   
   return (
     <Map
       style="mapbox://styles/forrestwilkins/ckfg22k601swx19pe8dz99ujc"
       containerStyle={{
-        height: '50vh',
+        height: '80vh',
         width: '100%'
       }}
       center={[-98.5795, 39.8283]}
@@ -31,6 +31,10 @@ const MapboxGLMap = ({ locations }) => {
       </Layer>
     </Map>
   )
+};
+
+MapboxGLMap.propTypes = {
+  page: PropTypes.object.isRequired
 };
 
 export default MapboxGLMap;

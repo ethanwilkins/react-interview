@@ -5,12 +5,16 @@ import Locations from './components/Locations';
 import EarthQuakes from './components/EarthQuakes';
 import Loans from './components/Loans';
 
-import styles from './styles/App.module.scss';
+const style = {
+  width: '70vw',
+  margin: '0 auto',
+  marginTop: '2vh'
+}
 
 function App() {
   const [page, setPage] = useState('Locations')
   return (
-    <div className={styles.app}>
+    <div style={style}>
       <Navbar page={page} setPage={setPage} />
 
       {page === 'Locations' &&

@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
-import { Button, ButtonGroup, Nav } from 'react-bootstrap';
-
-import styles from '../styles/Navbar.module.scss';
+const style = {
+  width: '100%',
+  marginBottom: '2vh'
+}
 
 export default function Navbar({ page, setPage }) {
 
   return (
     <>
-      <ButtonGroup size="lg" className={styles.navbar}>
+      <ButtonGroup size="lg" style={style}>
         <Button
           onClick={() => setPage('Locations')}
           variant={page === 'Locations' ? 'primary' : 'secondary'}
