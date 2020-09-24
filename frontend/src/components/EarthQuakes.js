@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+import { Spinner } from 'react-bootstrap';
+
 import { CsvToHtmlTable } from 'react-csv-to-table';
 
 import styles from '../styles/EarthQuakes.module.scss';
@@ -28,7 +30,7 @@ export default function EarthQuakes(props) {
   return (
     <>
       {!earthQuakes &&
-        "Loading..."
+        <Spinner animation="border" variant="success" />
       }
       {earthQuakes &&
         <CsvToHtmlTable
