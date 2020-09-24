@@ -16,8 +16,8 @@ const MapboxGLMap = ({ locations }) => {
         height: '50vh',
         width: '50vw'
       }}
-      center={[locations[50].geometry.location.lng, locations[50].geometry.location.lat]}
-      zoom={[2]}
+      center={[-98.5795, 39.8283]}
+      zoom={[3]}
     >
       <Layer type="symbol" id="marker" layout={{ 'icon-image': 'Google_Maps_pin' }}>
         {
@@ -34,3 +34,6 @@ const MapboxGLMap = ({ locations }) => {
 };
 
 export default MapboxGLMap;
+
+
+
