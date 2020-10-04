@@ -24,4 +24,4 @@ MapboxGLMap component - To encapsulate all of the logic required to render a Map
 
 fetchData() method for call to backend - To ensure that the logic for retrieving data from the backend at page load is made separate from any other logic that might need to happen at page load (within `useEffect`) moving forward.
 
-CSS in JS - Lets you think and design styles in the component level, leveraging the principle of modularity. CSS modules weren't necessary for the scope of this project so styling was kept minimal.
+CSS in JS - Lets you think and design styles in the component level, leveraging the principle of modularity. CSS modules weren't necessary for the scope of this project and styling was kept minimal.
