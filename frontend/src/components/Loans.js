@@ -16,11 +16,8 @@ export default function Loans() {
     axios
       .get("http://localhost:12059/react-interview/getLoanData")
       .then(response => {
-
-         console.log('response',response.data)
-
          setLoans(response.data)
-       }) // you have array in your response.data so add your data here
+       })
       .catch(err => alert(err));
   };
   

@@ -16,11 +16,8 @@ export default function EarthQuakes() {
     axios
       .get("http://localhost:12059/react-interview/getEarthQuakes")
       .then(response => {
-
-         console.log('response',response.data)
-
          setEarthQuakes(response.data)
-       }) // you have array in your response.data so add your data here
+       })
       .catch(err => alert(err));
   };
   

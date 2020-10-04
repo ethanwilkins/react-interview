@@ -4,7 +4,7 @@ import axios from "axios";
 import { Spinner } from 'react-bootstrap';
 import MapboxGLMap from './MapboxGLMap';
 
-export default function Locations(props) {
+export default function Locations() {
 
   const [locations, setLocations ] = useState(null);
   
@@ -16,11 +16,8 @@ export default function Locations(props) {
     axios
       .get("http://127.0.0.1:12059/react-interview/getLowesStores")
       .then(response => {
-
-         console.log('response',response.data)
-
          setLocations(response.data)
-       }) // you have array in your response.data so add your data here
+       })
       .catch(err => alert(err));
   };
   
